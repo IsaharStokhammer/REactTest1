@@ -9,7 +9,6 @@ interface MissionFormProps {
 const MissionForm: React.FC<MissionFormProps> = ({
   addMission: addMission,
 }) => {
-  const [newMission, setNewMission] = useState<Mission | null>(null);
 
   const inputName = useRef<any>(null);
   const inputStatus = useRef<any>(null);
@@ -25,17 +24,11 @@ const MissionForm: React.FC<MissionFormProps> = ({
       description: inputDescription.current.value,
       id : uuid()
     };
-    // setNewMission(newMissionInput);
-    // if (!newMission) {
-    //   console.log("no mission");
-    //   return;
-    // }
-    console.log("------------------------");
+    console.log(newMissionInput);
 
-    console.log(newMission);
+    // console.log(newMission);
 
     addMission(newMissionInput);
-    setNewMission(null);
   };
   return (
     <form className="mission-form" onSubmit={handleSubmit}>
