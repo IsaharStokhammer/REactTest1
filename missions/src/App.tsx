@@ -8,10 +8,11 @@ const addMission: (mission: Mission) => Promise<void> = async (mission) => {
 
 }
 
+
+
 const App = () => {
   return (
     <div>
-      <MissionForm addMission={addMission}/>
       <MissionsComponent />
     </div>
   )

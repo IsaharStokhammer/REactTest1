@@ -9,7 +9,6 @@ export interface Mission{
 const exsampleMission = {
     name: "Mission 1",
     status: "In progress",
-    priority: "Medium",
-    description: "Mission 1 description",
-    id : "1"
+    priority: "Law",
+    description: "Mission 1 description"
 }

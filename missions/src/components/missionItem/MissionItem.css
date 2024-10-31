@@ -1,0 +1,21 @@
+.mission-item{
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 20px;
+}
+.mission-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.oreng{
+    background-color: orange;
+}
