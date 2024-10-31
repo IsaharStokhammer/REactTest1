@@ -29,7 +29,7 @@ const MissionForm: React.FC<MissionFormProps> = ({
         // onChange={(e) => setNewMission(e.target.value)}
         placeholder="Add new Mission"
       />
-      <button type="submit">Add</button>
+      <button type="submit">Add Mission</button>
     </form>
   );
 };

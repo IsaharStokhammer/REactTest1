@@ -3,6 +3,7 @@ export interface Mission{
     status: string;
     priority: string;
     description: string;
+    id : string
 }
 
 const exsampleMission = {
@@ -10,4 +11,5 @@ const exsampleMission = {
     status: "In progress",
     priority: "Medium",
     description: "Mission 1 description",
+    id : "1"
 }
