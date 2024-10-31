@@ -44,7 +44,7 @@ const MissionsComponent: React.FC = () => {
   const increaseMission = async (id: string): Promise<void> => {
     try {
       const singleMission: Mission | undefined = missions.find(
-        (mission) => mission.id === id
+        (mission) => mission._id === id
       );
       if (!singleMission) {
         throw new Error("cant find mission with this id");
@@ -54,7 +54,7 @@ const MissionsComponent: React.FC = () => {
       }
       singleMission.status =
         singleMission.status === "In progress" ? "Completed" : "In progress";
-      await axios.post<Mission>(`${BASE_URL}/progress/:${id}`, {
+      await axios.post<Mission>(`${BASE_URL}/progress/${id}`, {
         ...singleMission,
       });
       getMissions();
@@ -65,6 +65,8 @@ const MissionsComponent: React.FC = () => {
 
   //Delete
   const deleteMission = async (id: string): Promise<void> => {
+    console.log(id);
+    
     try {
       await axios.delete(`${BASE_URL}/${id}`);
       getMissions();
@@ -79,7 +81,7 @@ const MissionsComponent: React.FC = () => {
       <ul>
         {missions.map((mission) => (
           <MissionItem
-            key={mission.id}
+            key={mission._id}
             deleteMission={deleteMission}
             mission={mission}
             increaseMission={increaseMission}

@@ -21,8 +21,8 @@ const MissionItem: React.FC<MissionItemProps> = ({
         <p>{mission.priority}</p>
         <p>{mission.description}</p>
       </div>
-      <button onClick={()=>deleteMission(mission.id)}>Delete</button>
-      <button className={`${mission.status==="Completed" ? "green" : "red"}`} onClick={()=>increaseMission(mission.id)}>progress</button>
+      <button onClick={()=>deleteMission(mission._id)}>Delete</button>
+      <button className={`${mission.status==="Completed" ? "green" : "red"}`} onClick={()=>increaseMission(mission._id)}>progress</button>
     </li>
   );
 };
