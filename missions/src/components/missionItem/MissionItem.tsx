@@ -7,22 +7,35 @@ interface MissionItemProps {
   deleteMission: (id: string) => Promise<void>;
   increaseMission: (id: string) => Promise<void>;
 }
+const changeBackgroundPerStatus = (status: string) => {
+    switch (status) {
+      case "In progress":
+        return "orange";
+      case "Completed":
+        return "green";
+        case "Pending":
+            return "red";
+      default:
+        return "red";
+    }
+}
 const MissionItem: React.FC<MissionItemProps> = ({
   mission: mission,
   deleteMission: deleteMission,
   increaseMission: increaseMission,
+  
 }) => {
   return (
     <li className={`mission-item`}>
     {/* <li className={`todo-item ${mission.completed ? "completed" : ""} `}> */}
-      <div className="mission-details">
+      <div className={changeBackgroundPerStatus(mission.status)}>
         <h4>{mission.name}</h4>
         <p className="mission-status">{mission.status}</p>
         <p>{mission.priority}</p>
         <p>{mission.description}</p>
       </div>
       <button onClick={()=>deleteMission(mission._id)}>Delete</button>
-      <button className={`${mission.status==="Completed" ? "green" : "red"}`} onClick={()=>increaseMission(mission._id)}>progress</button>
+      <button  onClick={()=>increaseMission(mission._id)}>progress</button>
     </li>
   );
 };
