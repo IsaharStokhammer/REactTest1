@@ -27,7 +27,6 @@ const MissionItem: React.FC<MissionItemProps> = ({
 }) => {
   return (
     <li className={`mission-item`}>
-    {/* <li className={`todo-item ${mission.completed ? "completed" : ""} `}> */}
       <div className={changeBackgroundPerStatus(mission.status)}>
         <h4>{mission.name}</h4>
         <p className="mission-status">{mission.status}</p>
