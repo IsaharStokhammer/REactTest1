@@ -17,9 +17,9 @@ const MissionItem: React.FC<MissionItemProps> = ({
     {/* <li className={`todo-item ${mission.completed ? "completed" : ""} `}> */}
       <div className="mission-details">
         <h4>{mission.name}</h4>
-        <h4 className="mission-status">{mission.status}</h4>
-        <h4>{mission.priority}</h4>
-        <h4>{mission.description}</h4>
+        <p className="mission-status">{mission.status}</p>
+        <p>{mission.priority}</p>
+        <p>{mission.description}</p>
       </div>
       <button onClick={()=>deleteMission(mission.id)}>Delete</button>
       <button className={`${mission.status==="Completed" ? "green" : "red"}`} onClick={()=>increaseMission(mission.id)}>progress</button>

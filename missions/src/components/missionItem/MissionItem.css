@@ -4,6 +4,7 @@
     padding: 20px;
 }
 .mission-details{
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;

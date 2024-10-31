@@ -9,7 +9,6 @@ interface MissionFormProps {
 const MissionForm: React.FC<MissionFormProps> = ({
   addMission: addMission,
 }) => {
-
   const inputName = useRef<any>(null);
   const inputStatus = useRef<any>(null);
   const inputPriority = useRef<any>(null);
@@ -17,12 +16,11 @@ const MissionForm: React.FC<MissionFormProps> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const newMissionInput: Mission = {
+    const newMissionInput: any = {
       name: inputName.current.value,
       status: inputStatus.current.value,
       priority: inputPriority.current.value,
       description: inputDescription.current.value,
-      id : uuid()
     };
     console.log(newMissionInput);
 
